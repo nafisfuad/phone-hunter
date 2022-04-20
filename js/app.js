@@ -75,6 +75,9 @@ const displayPhoneDetails = phone => {
         }
     }
 
+    for (const key in phone.mainFeatures.others) {
+        others.push(phone.mainFeatures.others[key]);
+    }
 
     console.log(mainFeatures);
     const phoneDiv = document.getElementById('phone-details');
@@ -87,7 +90,7 @@ const displayPhoneDetails = phone => {
             <div class="col-md-8 col-sm-12">
                 <div class="card-body">
                     <h5 class="card-title">${phone.name}</h5>
-                    <p class="card-text"><small>Release Date: ${phone.releaseDate}</small></p>
+                    <p class="card-text"><small>Release Date: ${phone.releaseDate === '' ? 'No release date found' : phone.releaseDate}</small></p>
                     <p class="card-text"><small>Main Features: ${mainFeatures}</small></p>
                     <p class="card-text"><small>Sensors: ${phone.mainFeatures.sensors}</small></p>
                     <p class="card-text"><small>Others: ${others}</small></p>
