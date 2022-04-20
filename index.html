@@ -11,19 +11,24 @@
 </head>
 
 <body>
-    <div class="container d-lg-flex justify-content-between my-5">
-        <div class="my-5">
-            <h2>Phonebook</h2>
-            <div class="d-flex">
-                <input id="search-field" type="text">
-                <button class="btn btn-primary" onclick="loadPhones()">Search</button>
+    <main>
+        <!-- input field -->
+        <div class="container d-lg-flex justify-content-between my-5">
+            <div class="my-5">
+                <h2>Phonebook</h2>
+                <div class="d-flex">
+                    <input id="search-field" type="text">
+                    <button class="btn btn-primary" onclick="loadPhones()">Search</button>
+                </div>
             </div>
+    
+            <!-- phone details -->
+            <div id="phone-details"></div>
         </div>
-
-        <div id="phone-details"></div>
-    </div>
-
-    <div id="phones" class="row row-cols-1 row-cols-md-3 g-4 mx-3"></div>
+        
+        <!-- phones list -->
+        <div id="phones" class="row row-cols-1 row-cols-md-3 g-4 mx-3"></div>
+    </main>
     <script src="js/app.js"></script>
 </body>
 
