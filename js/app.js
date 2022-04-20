@@ -1,5 +1,6 @@
 const loadPhones = () => {
     const searchText = document.getElementById('search-field').value;
+    document.getElementById('search-field').value = '';
     const url = (`https://openapi.programming-hero.com/api/phones?search=${searchText}`);
     fetch(url).then(res => res.json()).then(data => displayPhones(data.data));
 };
@@ -9,6 +10,20 @@ const displayPhones = phones => {
 
     const phonesDiv = document.getElementById('phones');
     phonesDiv.textContent = '';
+    if (phones.length === 0) {
+        phonesDiv.innerHTML = `
+        <div class="card w-100">
+  <div class="card-header">
+    Error
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>No results found.</p>
+    </blockquote>
+  </div>
+</div>
+        `
+    }
     if (phones.length <= 20) {
         for (const phone of phones) {
             const col = document.createElement('div');
