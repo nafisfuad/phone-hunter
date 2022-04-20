@@ -75,8 +75,8 @@ const displayPhoneDetails = phone => {
         }
     }
 
-    for (const key in phone.mainFeatures.others) {
-        others.push(phone.mainFeatures.others[key]);
+    for (const key in phone.others) {
+        others.push(phone.others[key]);
     }
 
     console.log(mainFeatures);
